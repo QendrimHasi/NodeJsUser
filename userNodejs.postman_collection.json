@@ -1,0 +1,322 @@
+{
+	"info": {
+		"_postman_id": "421ba026-c534-4a55-94d5-b94eea1d5f80",
+		"name": "userNodejs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "{{Url}}/users/",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"user9\",\r\n    \"firstname\": \"user9\",\r\n    \"lastname\": \"user9\",\r\n    \"email\": \"user9@hotmail.com\",\r\n    \"password\": \"123456\",\r\n    \"phone\": \"1234561234\",\r\n    \"address\": \"233 bay State Rd, Boston\",\r\n    \"about\": \"fghdfghdfghdfghdfghdfghgf\",\r\n    \"skills\": [\"Skill one\",\"Skill two\",\"Skill three\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/auth",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"auth"
+					]
+				},
+				"description": "create user"
+			},
+			"response": []
+		},
+		{
+			"name": "{{Url}}/auth/login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"user6@hotmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"auth",
+						"login"
+					]
+				},
+				"description": "log in user"
+			},
+			"response": []
+		},
+		{
+			"name": "{{Url}}/users/",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNTI4MjczMzAxMzI0MmY4NDQ0ZjljNSIsImlhdCI6MTU5OTI0Mjg5MywiZXhwIjoxNTk5MzI5MjkzfQ.1aNINjMIbQ95nsnvGTqHJy8kJ7Aa-TerDrCN6diBOb8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:5000/users/",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"users",
+						""
+					]
+				},
+				"description": "gell all users"
+			},
+			"response": []
+		},
+		{
+			"name": "{{Url}}/users/5f50c255c15e334a8462ada8",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNTI4MjczMzAxMzI0MmY4NDQ0ZjljNSIsImlhdCI6MTU5OTI0Mjg5MywiZXhwIjoxNTk5MzI5MjkzfQ.1aNINjMIbQ95nsnvGTqHJy8kJ7Aa-TerDrCN6diBOb8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:5000/users/5f50c255c15e334a8462ada8",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"users",
+						"5f50c255c15e334a8462ada8"
+					]
+				},
+				"description": "get single  user"
+			},
+			"response": []
+		},
+		{
+			"name": "{{Url}}/users/radius/02118/20",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNTI4MjczMzAxMzI0MmY4NDQ0ZjljNSIsImlhdCI6MTU5OTI0Mjg5MywiZXhwIjoxNTk5MzI5MjkzfQ.1aNINjMIbQ95nsnvGTqHJy8kJ7Aa-TerDrCN6diBOb8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:5000/users/radius/02118/20",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"users",
+						"radius",
+						"02118",
+						"20"
+					]
+				},
+				"description": "get users with radius"
+			},
+			"response": []
+		},
+		{
+			"name": "{{Url}}/users/5f50c255c15e334a8462ada8",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNTI4MjczMzAxMzI0MmY4NDQ0ZjljNSIsImlhdCI6MTU5OTI0Mjg5MywiZXhwIjoxNTk5MzI5MjkzfQ.1aNINjMIbQ95nsnvGTqHJy8kJ7Aa-TerDrCN6diBOb8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstname\": \"qendrim\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/users/5f510032eb54a743c4b1d10f?",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"users",
+						"5f510032eb54a743c4b1d10f"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null
+						}
+					]
+				},
+				"description": "update user"
+			},
+			"response": []
+		},
+		{
+			"name": "{{Url}}/users/5f50c255c15e334a8462ada8",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNTI4MjczMzAxMzI0MmY4NDQ0ZjljNSIsImlhdCI6MTU5OTI0Mjg5MywiZXhwIjoxNTk5MzI5MjkzfQ.1aNINjMIbQ95nsnvGTqHJy8kJ7Aa-TerDrCN6diBOb8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:5000/users/5f50c255c15e334a8462ada8",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"users",
+						"5f50c255c15e334a8462ada8"
+					]
+				},
+				"description": "delete user"
+			},
+			"response": []
+		},
+		{
+			"name": "{{Url}}/users/",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNTI4MjczMzAxMzI0MmY4NDQ0ZjljNSIsImlhdCI6MTU5OTI0Mjg5MywiZXhwIjoxNTk5MzI5MjkzfQ.1aNINjMIbQ95nsnvGTqHJy8kJ7Aa-TerDrCN6diBOb8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:5000/users?username=qendrim",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "qendrim"
+						}
+					]
+				},
+				"description": "get user with query gt,gte,lt,lte,in"
+			},
+			"response": []
+		},
+		{
+			"name": "{{Url}}/users/",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNTI4MjczMzAxMzI0MmY4NDQ0ZjljNSIsImlhdCI6MTU5OTI0Mjg5MywiZXhwIjoxNTk5MzI5MjkzfQ.1aNINjMIbQ95nsnvGTqHJy8kJ7Aa-TerDrCN6diBOb8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:5000/users?page=2&limit=2&select=username",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						},
+						{
+							"key": "limit",
+							"value": "2"
+						},
+						{
+							"key": "select",
+							"value": "username"
+						}
+					]
+				},
+				"description": "get user with pagination and or seelect filds"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

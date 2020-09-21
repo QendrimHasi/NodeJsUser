@@ -17,18 +17,16 @@ exports.getProducts = asyncHandler(async (req, res, next) => {
 });
 
 exports.getProduct = asyncHandler(async (req, res, next) => {
-  const product = await Products.findById(req.params.id);
+  const product = await Products.findByIdAndUpdate(req.params.id, {
+    $inc: { view: 1 },
+  });
 
   if (!product) {
     return next(
       new ErrorResponse(`Product not found with id of ${req.params.id}`, 404)
     );
   }
-  const pro = await Products.updateOne(
-    { _id: req.params.id },
-    { view: product.view + 1 }
-  );
-  product.view++;
+
   res.status(200).json({
     success: true,
     data: product,

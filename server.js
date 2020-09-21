@@ -19,6 +19,7 @@ connectDB();
 const users = require('./routes/users');
 const auth = require('./routes/auth');
 const products = require('./routes/products');
+const comments = require('./routes/comment');
 
 const app = express();
 
@@ -42,6 +43,11 @@ app.use(
   '/products',
   passport.authenticate('jwt', { session: false }),
   products
+);
+app.use(
+  '/comments',
+  passport.authenticate('jwt', { session: false }),
+  comments
 );
 app.use('/auth', auth);
 

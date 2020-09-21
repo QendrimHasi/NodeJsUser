@@ -18,6 +18,7 @@ connectDB();
 
 const users = require('./routes/users');
 const auth = require('./routes/auth');
+const products = require('./routes/products');
 
 const app = express();
 
@@ -37,6 +38,11 @@ app.use(passport.session());
 
 //Mount router
 app.use('/users', passport.authenticate('jwt', { session: false }), users);
+app.use(
+  '/products',
+  passport.authenticate('jwt', { session: false }),
+  products
+);
 app.use('/auth', auth);
 
 app.use(errorHandler);

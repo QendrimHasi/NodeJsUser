@@ -9,7 +9,7 @@ const erroHandler = (err, req, res, next) => {
 
   //mongose bad objekt id
   if (err.name === 'CastError') {
-    const message = ` User not found  ${err.value}`;
+    const message = ` Resorce not found  ${err.value}`;
     error = new ErrorResponse(message, 404);
   }
 

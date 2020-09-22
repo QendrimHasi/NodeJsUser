@@ -23,6 +23,10 @@ const CommentShema = mongoose.Schema({
     required: [true, 'Please add a description'],
     maxlength: [250, 'Description can not be more then 250 characters'],
   },
+  verified: {
+    type: Boolean,
+    default: false,
+  },
   createdAt: {
     type: Date,
     default: Date.now,
@@ -32,4 +36,5 @@ const CommentShema = mongoose.Schema({
     default: Date.now,
   },
 });
+
 module.exports = mongoose.model('Comment', CommentShema);

@@ -24,6 +24,7 @@ exports.getUsers = asyncHandler(async (req, res, next) => {
   query = User.find(JSON.parse(queryStr));
   //select filds
   if (req.query.select) {
+    console.log('select');
     const filds = req.query.select.split(',').join(' ');
     query = query.select(filds);
   }
@@ -31,6 +32,7 @@ exports.getUsers = asyncHandler(async (req, res, next) => {
   //sort
 
   if (req.query.sort) {
+    console.log('sort');
     const sortBy = req.query.sort.split(',').join(' ');
     query = query.sort(sortBy);
   }
@@ -54,7 +56,7 @@ exports.getUsers = asyncHandler(async (req, res, next) => {
 //@access  Publis
 
 exports.getUser = asyncHandler(async (req, res, next) => {
-  const user = await User.findById(req.params.id);
+  const user = await User.findById(req.params.id).populate('comments');
   if (!user) {
     return next(
       new ErrorResponse(`User not found with id of ${req.params.id}`, 404)

@@ -27,6 +27,7 @@ const ProductShema = mongoose.Schema(
     stock: {
       type: Number,
       required: [true, 'Please add a Stock'],
+      min: 0,
     },
     sold: {
       type: Number,

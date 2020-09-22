@@ -19,7 +19,7 @@ exports.getProducts = asyncHandler(async (req, res, next) => {
 exports.getProduct = asyncHandler(async (req, res, next) => {
   const product = await Products.findByIdAndUpdate(req.params.id, {
     $inc: { view: 1 },
-  }).populate('comments');
+  });
 
   if (!product) {
     return next(

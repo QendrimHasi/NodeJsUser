@@ -20,6 +20,7 @@ const users = require('./routes/users');
 const auth = require('./routes/auth');
 const products = require('./routes/products');
 const comments = require('./routes/comment');
+const orders = require('./routes/order');
 
 const app = express();
 
@@ -49,6 +50,7 @@ app.use(
   passport.authenticate('jwt', { session: false }),
   comments
 );
+app.use('/orders', passport.authenticate('jwt', { session: false }), orders);
 app.use('/auth', auth);
 
 app.use(errorHandler);
